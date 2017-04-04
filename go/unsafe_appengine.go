@@ -1,10 +1,8 @@
+// +build appengine
+
 package flatbuffers
 
-import (
-	"unsafe"
-)
-
-// byteSliceToString converts a []byte to string without a heap allocation.
+// byteSliceToString same as string built-in function.
 func byteSliceToString(b []byte) string {
-	return *(*string)(unsafe.Pointer(&b))
+	return string(b)
 }
